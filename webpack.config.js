@@ -1,8 +1,10 @@
 const path = require("path")
 const webpack = require("webpack")
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+var Visualizer = require('webpack-visualizer-plugin');
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: "./src_remote/index.js",
     mode: "development",
     module: {
         rules: [
@@ -19,18 +21,31 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ["*",".js","jsx"]
+        extensions: ["*",".js","jsx"],
+        alias:{
+            'react-dom': '@hot-loader/react-dom'
+        }
     },
     output: {
         path: path.resolve(__dirname, "dist/"),
         publicPath: "/dist/",
-        filename: "bundle.js"
+        filename: "bundle3.js"
     },
+    // optimization: {
+    //     minimize: true,
+    //     minimizer: [new UglifyJsPlugin()]
+    // },
     devServer: {
         contentBase: path.join(__dirname, "public/"),
-        port: 3000,
-        publicPath: "http://localhost:3000/dist",
+        port: 3006,
+        publicPath: "http://localhost:3006/dist",
         hotOnly: true
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()]
+    plugins: [
+        new Visualizer({
+            filename: './statistics.html'
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+
+    ]
 }

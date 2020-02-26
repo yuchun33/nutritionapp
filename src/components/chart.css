@@ -1,0 +1,4 @@
+.bar:hover{
+    fill: #FBCD50;
+    transition: ease-in 0.1s;
+}
