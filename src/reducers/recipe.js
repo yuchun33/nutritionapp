@@ -80,7 +80,8 @@ const recipe = (state = {
                 }
             })
         case 'ADD_INGREDIENT_TO_RECIPE':{
-            let updateNutritionRecipes = Object.assign({}, state.nutritionInRecipe)
+            let updateNutritionRecipes = Object.assign({}, state.nutritionInRecipe)            
+            updateNutritionRecipes['name'] += action.ingredientInRecipe['name'],
             updateNutritionRecipes['calories'] += action.ingredientInRecipe['calories'],
             updateNutritionRecipes['protein'] += action.ingredientInRecipe['protein'],
             updateNutritionRecipes['carbohydrate'] += action.ingredientInRecipe['carbohydrate'],
@@ -91,9 +92,7 @@ const recipe = (state = {
                 ingredientInRecipe: [...state.ingredientInRecipe, action.ingredientInRecipe]
             })
         }
-        case 'GET_INGREDIENT_OF_RECIPE':{
-            console.log('GET_INGREDIENT_OF_RECIPE:::::::',action.nutritionInRecipe);
-            
+        case 'GET_INGREDIENT_OF_RECIPE':{            
             return Object.assign({}, state, {
                 recipeTable: true,
                 querySuccess: true,

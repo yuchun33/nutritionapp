@@ -158,8 +158,8 @@ function match(nutritionDB) {
 export function addIngredientToRecipe(ingredient) {    
     return (dispatch, getState) =>{
         let ingredient = getState().ingredient
-        let ingredientInRecipe = {}
-        ingredientInRecipe['name'] = ingredient.name        
+        let ingredientInRecipe = {}        
+        ingredientInRecipe['name'] = ingredient.ingredient        
         ingredientInRecipe['calories'] = (ingredient.nutrition['calories']* (ingredient.defineUnit/100)),
         ingredientInRecipe['protein'] = (ingredient.nutrition['protein'] * (ingredient.defineUnit/100)),
         ingredientInRecipe['fat'] = (ingredient.nutrition['fat'] * (ingredient.defineUnit/100)),

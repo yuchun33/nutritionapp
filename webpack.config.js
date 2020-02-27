@@ -29,7 +29,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "dist/"),
         publicPath: "/dist/",
-        filename: "bundle3.js"
+        filename: "bundle.js"
     },
     // optimization: {
     //     minimize: true,

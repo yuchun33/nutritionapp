@@ -8,7 +8,7 @@ import {FirstListItem, RecipeItem, RecipePaper, MyList} from '../styleComponent/
 
 class RecipeList extends Component {
     render(){
-        let {ingredientInRecipe, nutritionInRecipe, ingredient, changeRecipeIngredient, changeRecipeIngredientDefineUnit, deleteIngredient} = this.props
+        let {ingredientInRecipe, nutritionInRecipe, ingredient, changeRecipeIngredient, changeRecipeIngredientDefineUnit, deleteIngredient} = this.props        
         return(
             <RecipePaper>
             <MyList> 
