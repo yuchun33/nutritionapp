@@ -17,7 +17,7 @@
     "@babel/preset-react": "^7.8.3",
     "@material-ui/lab": "^4.0.0-alpha.43",
     "babel-loader": "^8.0.6",
-    "css-loader": "^1.0.1",
+    "css-loader": "^7.1.4",
     "react-hot-loader": "^4.12.19",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
